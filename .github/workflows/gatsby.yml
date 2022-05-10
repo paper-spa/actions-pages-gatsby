@@ -32,6 +32,17 @@ jobs:
       with:
         node-version: '16'
         cache: 'npm'
+    - name: Caching Gatsby
+      id: gatsby-cache-build
+      uses: actions/cache@v2
+      with:
+        path: |
+          public
+          .cache
+        key: ${{ runner.os }}-gatsby-build-${{ hashFiles(public) }}
+        restore-keys: |
+          ${{ runner.os }}-gatsby-build-
+          
     - run: npm ci
     - run: npm run build --if-present
 
