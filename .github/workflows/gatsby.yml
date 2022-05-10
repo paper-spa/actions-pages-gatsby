@@ -39,10 +39,10 @@ jobs:
         path: |
           public
           .cache
-        key: ${{ runner.os }}-gatsby-build-${{ hashFiles(public) }}
+        key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
         restore-keys: |
           ${{ runner.os }}-gatsby-build-
-          
+
     - run: npm ci
     - run: npm run build --if-present
 
