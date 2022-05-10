@@ -56,7 +56,6 @@ jobs:
 
   # The deploy job tells Pages to deploy the artifact we created in "build"
   deploy:
-    if: ${{ always() }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
