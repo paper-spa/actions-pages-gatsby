@@ -28,23 +28,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-        cache: 'npm'
-    - name: Caching Gatsby
-      id: gatsby-cache-build
-      uses: actions/cache@v2
-      with:
-        path: |
-          public
-          .cache
-        key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
-        restore-keys: |
-          ${{ runner.os }}-gatsby-build-
-
-    - run: npm ci
-    - run: npm run build --if-present
+    
+    - uses: paper-spa/gatsby-pages-build@main
 
     - name: Upload Pages artifact
       uses: paper-spa/upload-pages-artifact@main
