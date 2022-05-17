@@ -19,6 +19,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  PREFIX_PATHS: true gatsby build
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This build job takes care of preparing the artifact that we'll deploy to Pages
