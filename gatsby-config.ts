@@ -1,9 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
-  exports: {
-    pathPrefix: 'actions-pages-gatsby'
-  },
+  pathPrefix: 'actions-pages-gatsby',
   siteMetadata: {
     title: `My Gatsby Site`,
     siteUrl: `https://www.yourdomain.tld`
