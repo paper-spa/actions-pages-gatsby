@@ -23,4 +23,4 @@ permissions:
 jobs:
   # This build job takes care of preparing the artifact that we'll deploy to Pages
   build-and-deploy:
-    uses: paper-spa/.github/workflows/gatsby-pages.yml@main
+    uses: paper-spa/.github/.github/workflows/gatsby-pages.yml@main
