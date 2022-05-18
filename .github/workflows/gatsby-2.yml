@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Gatsby Reusable
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# This sets the permissions of the GITHUB_TOKEN to allow us to deploy to Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This build job takes care of preparing the artifact that we'll deploy to Pages
+  build-and-deploy:
+    uses: paper-spa/.github/workflows/gatsby-pages.yml@main
